@@ -1,7 +1,7 @@
 from django.db import connection
 from django.core.management.base import BaseCommand
-# from users.models import User
-# from edu.models import EduModel
+from users.models import User
+from edu.models import EduModel
 
 
 class Command(BaseCommand):
@@ -11,7 +11,7 @@ class Command(BaseCommand):
             cursor.execute(
                 "TRUNCATE TABLE users_user, edu_edumodel RESTART IDENTITY CASCADE;")
 
-        admin = User.objects.create_superuser(email="admin@edu", is_superuser=True, is_staff=True)
+        admin = User.objects.create(email="admin@edu", password="admin", is_superuser=True, is_staff=True)
         admin.set_password("admin")
         admin.save()
 
