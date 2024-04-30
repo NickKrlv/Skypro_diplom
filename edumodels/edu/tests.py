@@ -1,9 +1,7 @@
-from django.test import TestCase
 from rest_framework.test import APITestCase, APIClient
 from rest_framework import status
 from users.models import User
 from .models import EduModel
-from .serializers import EduSerializer
 
 
 class EduModelAPITestCase(APITestCase):

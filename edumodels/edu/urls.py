@@ -1,5 +1,6 @@
 from django.urls import path
-from .views import *
+from .views import (EduModelAPIView, EduModelDetailAPIView, EduModelCreateAPIView, EduModelUpdateAPIView,
+                    EduModelDestroyAPIView)
 
 app_name = 'edu'
 
